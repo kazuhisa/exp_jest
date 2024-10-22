@@ -1,10 +1,10 @@
 // index.test.js
-jest.mock("./index", () => ({
-  ...jest.requireActual("./index"),
+jest.mock("./query", () => ({
   getUserQuery: jest.fn(),
 }));
 
-const {work, getUserQuery} = require("./index");
+const {work} = require("./index");
+const {getUserQuery} = require("./query");
 
 describe("work", () => {
   it("getUserQueryをモックしてhogehogeを返す", async () => {
